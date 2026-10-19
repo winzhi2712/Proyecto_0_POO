@@ -1,0 +1,173 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="gredLczbYCOpFvGQR1Ck">
+    <mxGraphModel dx="2603" dy="2150" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xRTjRKjFjk1tTnng_p3Q-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="895" width="530" x="-790" y="-325" as="geometry" />
+        </mxCell>
+        <mxCell id="xRTjRKjFjk1tTnng_p3Q-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="895" width="520" x="-210" y="-325" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Cliente" vertex="1">
+          <mxGeometry height="260" width="160" x="90" y="-300" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-2" parent="htJfvbqOJIDKU7AccneB-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- nombre : String&lt;div&gt;- email : String&lt;/div&gt;&lt;div&gt;- numero : String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-3" parent="htJfvbqOJIDKU7AccneB-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-4" parent="htJfvbqOJIDKU7AccneB-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ getNombre (): String&lt;/div&gt;&lt;div&gt;+ getEmail(): String&lt;/div&gt;&lt;div&gt;+ getNumero(): String&lt;/div&gt;&lt;div&gt;+ setEmail( email : String ): void&lt;/div&gt;&lt;div&gt;+ setNumero( numero : String ): void&lt;/div&gt;&lt;div&gt;+ Cliente( nombre : String, email: String, numero : String) : void&lt;/div&gt;&lt;div&gt;+ toString(): String&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="172" width="160" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Cita" vertex="1">
+          <mxGeometry height="340" width="160" x="90" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-6" parent="htJfvbqOJIDKU7AccneB-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- fecha : LocalDate&lt;div&gt;- hora : int&lt;/div&gt;&lt;div&gt;- confirmacion : Boolean&lt;/div&gt;" vertex="1">
+          <mxGeometry height="64" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-7" parent="htJfvbqOJIDKU7AccneB-5" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-8" parent="htJfvbqOJIDKU7AccneB-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ getFecha() : LocalDate&lt;div&gt;+ getHora(): int&lt;/div&gt;&lt;div&gt;+ getServicio() : Servicio&lt;/div&gt;&lt;div&gt;+ getConfirmada(): Boolean&lt;/div&gt;&lt;div&gt;+ setFecha( fecha : LocalDate ) : void&lt;/div&gt;&lt;div&gt;+ setHora( hora : int) : void&lt;/div&gt;&lt;div&gt;+ setServicio( servicio : Servicio): void&lt;/div&gt;&lt;div&gt;+ Cita( fecha : LocalDate, hora : int, servicio : Servicio, cliente:Cliente) : void&lt;/div&gt;&lt;div&gt;+ confirmar(): void&lt;/div&gt;&lt;div&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="242" width="160" y="98" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-31" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Servicio" vertex="1">
+          <mxGeometry height="130" width="160" x="90" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-32" parent="htJfvbqOJIDKU7AccneB-31" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- tipoServicio : String" vertex="1">
+          <mxGeometry height="26" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-33" parent="htJfvbqOJIDKU7AccneB-31" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-34" parent="htJfvbqOJIDKU7AccneB-31" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Servicio( tipoServicio : String) : void&lt;div&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="160" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-48" connectable="0" parent="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="*" vertex="1">
+          <mxGeometry x="60" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="bft2vO5J7WceZxRis9kA-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;Logica&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-180" y="-310" as="geometry" />
+        </mxCell>
+        <mxCell id="bft2vO5J7WceZxRis9kA-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;Control&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-760" y="-310" as="geometry" />
+        </mxCell>
+        <mxCell id="bft2vO5J7WceZxRis9kA-5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Control" vertex="1">
+          <mxGeometry height="654" width="310" x="-680" y="-160" as="geometry" />
+        </mxCell>
+        <mxCell id="GalW8_8YfoJpYUHd9G7W-7" edge="1" parent="bft2vO5J7WceZxRis9kA-5" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;fontSize=12;" target="bft2vO5J7WceZxRis9kA-8" value="">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="-20" />
+              <mxPoint x="-90" y="-20" />
+              <mxPoint x="-90" y="344" />
+            </Array>
+            <mxPoint x="150" as="sourcePoint" />
+            <mxPoint x="-90" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GalW8_8YfoJpYUHd9G7W-8" connectable="0" parent="GalW8_8YfoJpYUHd9G7W-7" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=12;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="-180" y="340" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bft2vO5J7WceZxRis9kA-7" parent="bft2vO5J7WceZxRis9kA-5" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="310" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="bft2vO5J7WceZxRis9kA-8" parent="bft2vO5J7WceZxRis9kA-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ crearCliente(nombre : String, email : String, numero : String) : void&lt;div&gt;+ modificarCliente(email : String, numero : String, posicion : int): void&lt;/div&gt;&lt;div&gt;+ borrarCliente( posicion : int ) : void&lt;/div&gt;&lt;div&gt;+ consultarCliente( posicion : Int) : Cliente&lt;/div&gt;&lt;div&gt;+ crearCita( fecha : LocalDate, hora : int, servicio : Servicio, cliente : Cliente) : void&lt;/div&gt;&lt;div&gt;+ modificarCIta(&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;fecha : LocalDate, hora : int, servicio : Servicio, cliente : Cliente&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ borrarCita( cliente : Cliente ): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ consultarCita( cliente : Cliente ) : Cita&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ enviarNotificacionConfirmacion(): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ confirmarCita( cliente : Cliente ) : Boolean&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ verCalendarioCitas(): List&amp;lt;Cita&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ crearServicio( tipoServicio : String ) : void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ borrarServicio( posicion : int ) : void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ modificarServicio ( posicion : int, tipoServicio : String ): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ consultarServicio(posicion : int): Servicio&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ mostrarListaEspera(): List&amp;lt;Cliente&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ agregarClienteListaEspera( cliente : Cliente ): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ borrarClienteListaEspera( posicion : int ): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ establecerHorarioAtencion(dia : DayOfWeek, horaApertura : int, horaCierre : int): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ consultarHorarioAtencion(): List&amp;lt;HorarioAtencion&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ verificarClienteExiste( nombre : String, email : String, numero : String ) : Boolean&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ esEmailValido( email : String ): Boolean&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ esNumeroValido( numero : String ): Boolean&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ verificarClienteSinCita( cliente : Cliente ): Boolean&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ verificarClienteListaEspera( cliente : Cliente ): Boolean&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ verificarHorarioDisponible( fecha : LocalDate, hora : int ): Boolean&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ esHorarioValido( horaApertura : int, horaCierre : int ): Boolean&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ verificarServicio( servicio : Servicio ): Boolean&lt;/div&gt;" vertex="1">
+          <mxGeometry height="620" width="310" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-35" edge="1" parent="1" source="htJfvbqOJIDKU7AccneB-5" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="&amp;nbsp;- servicio : Servicio">
+          <mxGeometry relative="1" x="0.2" y="10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points" />
+            <mxPoint x="100" y="430" as="sourcePoint" />
+            <mxPoint x="170" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="htJfvbqOJIDKU7AccneB-36" connectable="0" parent="htJfvbqOJIDKU7AccneB-35" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="-20" y="50" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ABjEhZQ6O-frl9szvAKD-1" edge="1" parent="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;entryX=-0.017;entryY=0.651;entryDx=0;entryDy=0;entryPerimeter=0;" target="htJfvbqOJIDKU7AccneB-4" value="- clientes : List&amp;lt;Cliente&amp;gt;">
+          <mxGeometry relative="1" x="0.4433" y="-20" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="-370" y="-100" as="sourcePoint" />
+            <mxPoint x="80" y="-100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ABjEhZQ6O-frl9szvAKD-3" edge="1" parent="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;entryX=0.001;entryY=0.381;entryDx=0;entryDy=0;entryPerimeter=0;" value="- citas :&amp;nbsp; List&amp;lt;Cita&amp;gt;">
+          <mxGeometry relative="1" x="0.5232" y="-20" as="geometry">
+            <mxPoint x="-1" as="offset" />
+            <mxPoint x="-370" y="80" as="sourcePoint" />
+            <mxPoint x="90.15999999999985" y="80.20199999999977" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ABjEhZQ6O-frl9szvAKD-4" edge="1" parent="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="htJfvbqOJIDKU7AccneB-31" value="- servicios : List&amp;lt;Servicio&amp;gt;">
+          <mxGeometry relative="1" x="0.392" y="-25" as="geometry">
+            <mxPoint x="-1" as="offset" />
+            <mxPoint x="-370" y="484.5" as="sourcePoint" />
+            <mxPoint x="70" y="484.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ABjEhZQ6O-frl9szvAKD-5" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" value="- cliente : Cliente">
+          <mxGeometry relative="1" x="1" y="-11" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="169.5" y="29" as="sourcePoint" />
+            <mxPoint x="169.50000000000023" y="-40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ABjEhZQ6O-frl9szvAKD-6" connectable="0" parent="ABjEhZQ6O-frl9szvAKD-5" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="-19" y="-49" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ABjEhZQ6O-frl9szvAKD-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="*" vertex="1">
+          <mxGeometry height="30" width="60" x="30" y="-130" as="geometry" />
+        </mxCell>
+        <mxCell id="ABjEhZQ6O-frl9szvAKD-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="*" vertex="1">
+          <mxGeometry height="30" width="60" x="40" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="GalW8_8YfoJpYUHd9G7W-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;- &lt;u style=&quot;&quot;&gt;instancia&lt;/u&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="10" width="70" x="-750" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="GalW8_8YfoJpYUHd9G7W-12" edge="1" parent="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;fontSize=12;curved=1;entryX=0;entryY=0.942;entryDx=0;entryDy=0;entryPerimeter=0;" target="htJfvbqOJIDKU7AccneB-4" value="*">
+          <mxGeometry relative="1" x="0.8696" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="-370" y="-50" as="sourcePoint" />
+            <mxPoint x="-210" y="-50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GalW8_8YfoJpYUHd9G7W-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;- listaEspera : List&amp;lt;Cliente&amp;gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="160" x="-70" y="-50" as="geometry" />
+        </mxCell>
+        <mxCell id="GalW8_8YfoJpYUHd9G7W-14" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="HorarioAtencion" vertex="1">
+          <mxGeometry height="310" width="190" x="-140" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="GalW8_8YfoJpYUHd9G7W-15" parent="GalW8_8YfoJpYUHd9G7W-14" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- dia : DayOfWeek&lt;div&gt;- horaApertura : int&lt;/div&gt;&lt;div&gt;- horaCierre : int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="47" width="190" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GalW8_8YfoJpYUHd9G7W-16" parent="GalW8_8YfoJpYUHd9G7W-14" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="190" y="73" as="geometry" />
+        </mxCell>
+        <mxCell id="GalW8_8YfoJpYUHd9G7W-17" parent="GalW8_8YfoJpYUHd9G7W-14" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ HorarioAtencion( dia : DayOfWeek, horaApertura : int, horaCierre : int)&lt;div&gt;+ getDia() : DayOfWeek&lt;/div&gt;&lt;div&gt;+ getHoraApertura() : int&lt;/div&gt;&lt;div&gt;+ get HoraCierre() : int&lt;/div&gt;&lt;div&gt;+ setHoraApertura( horaApertura : int): void&lt;/div&gt;&lt;div&gt;+ setHoraCierre( horaCierre : int):void&lt;/div&gt;&lt;div&gt;+ esHoraValida( hora : int): Boolean&lt;/div&gt;&lt;div&gt;+ estaCerrado() : Boolean&lt;/div&gt;&lt;div&gt;+ obtenerHorasDia() : List&amp;lt;Integer&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="229" width="190" y="81" as="geometry" />
+        </mxCell>
+        <mxCell id="FZ3XUdzwcTSyzr4dgcYP-1" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-size: 11px; text-wrap-mode: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;- horarios : List&amp;lt;HorarioAtencion&amp;gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="40" width="120" x="-315" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="FZ3XUdzwcTSyzr4dgcYP-3" edge="1" parent="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;entryX=0;entryY=0.936;entryDx=0;entryDy=0;entryPerimeter=0;" target="GalW8_8YfoJpYUHd9G7W-15" value="*">
+          <mxGeometry relative="1" x="0.7391" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="-370" y="210" as="sourcePoint" />
+            <mxPoint x="-210" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
