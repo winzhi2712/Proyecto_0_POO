@@ -11,5 +11,11 @@ public class Servicio {
 		return "Servicio: " + tipoServicio;
 	}
 	
+	public String getTipoServicio() { // buenas, Axel acá, le agregué esto para poder realizar la validación.
+	    return tipoServicio;
+	}
 	
+	public void setTipoServicio(String tipoServicio) {
+	    this.tipoServicio = tipoServicio;
+	}
 }
