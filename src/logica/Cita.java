@@ -7,14 +7,12 @@ public class Cita {
 	private LocalDate fecha;
 	private int hora;
 	private Servicio servicio;
-	private Cliente cliente;
 	private boolean confirmacion;
 	
-	public Cita(LocalDate fecha, int hora, Servicio servicio, Cliente cliente) {
+	public Cita(LocalDate fecha, int hora, Servicio servicio) {
 		this.fecha = fecha;
 		this.hora = hora;
 		this.servicio = servicio;
-		this.cliente = cliente;
 		this.confirmacion = false;
 	}
 
@@ -40,14 +38,6 @@ public class Cita {
 
 	public void setServicio(Servicio servicio) {
 		this.servicio = servicio;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
 	}
 	
 	public boolean confirmar() {

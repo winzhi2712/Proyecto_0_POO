@@ -101,12 +101,6 @@ public class Control {
 
     // --- GESTIÓN DE CITAS ---
     public void crearCita(LocalDate fecha, int hora, Servicio servicio, Cliente cliente) {
-    	// Validar que el cliente no tenga ya una cita activa
-        if (!verificarClienteSinCita(cliente)) {
-            System.out.println("Error: El cliente ya cuenta con una cita registrada.");
-            return;
-        }
-
         // Verificar que el horario esté disponible
         if (!verificarHorarioDisponible(fecha, hora)) {
             System.out.println("Error: El horario seleccionado no está disponible o la barbería está cerrada.");
@@ -114,14 +108,15 @@ public class Control {
         }
 
         // Crear y agregar la nueva cita a la lista
-        Cita nuevaCita = new Cita(fecha, hora, servicio, cliente);
+        Cita nuevaCita = new Cita(fecha, hora, servicio);
         this.citas.add(nuevaCita);
+        cliente.addCita(nuevaCita);
         System.out.println("¡Cita creada con éxito!");
     }
 
-    public void modificarCita(LocalDate fecha, int hora, Servicio servicio, Cliente cliente) {
+    public void modificarCita(LocalDate fecha, int hora, Servicio servicio, int pos) {
     	// Buscar la cita asociada al cliente
-        Cita citaAModificar = consultarCita(cliente);
+        Cita citaAModificar = citas.get(pos);
         
         if (citaAModificar == null) {
             System.out.println("Error: No se encontró una cita para este cliente.");
@@ -134,6 +129,10 @@ public class Control {
                 System.out.println("Error: El nuevo horario no está disponible.");
                 return;
             }
+            
+        citaAModificar.setFecha(fecha);
+        citaAModificar.setHora(hora);
+        citaAModificar.setServicio(servicio);
         }
 
         // Actualizar datos de la cita
@@ -143,8 +142,8 @@ public class Control {
         System.out.println("¡Cita modificada con éxito!");
     }
 
-    public void borrarCita(Cliente cliente) {
-    	Cita citaAEliminar = consultarCita(cliente);
+    public void borrarCita(int pos) {
+    	Cita citaAEliminar = citas.get(pos);
         if (citaAEliminar != null) {
             this.citas.remove(citaAEliminar);
             System.out.println("¡Cita eliminada con éxito!");
@@ -153,16 +152,9 @@ public class Control {
         }
     }
 
-    public Cita consultarCita(Cliente cliente) {
-    	if (cliente == null) {
-            return null;
-        }
-        for (Cita c : this.citas) {
-            if (c.getCliente() != null && c.getCliente().equals(cliente)) {
-                return c;
-            }
-        }
-        return null; // Retorna nulo si no tiene cita
+    public String consultarCita(int pos) {
+    	return citas.get(pos).toString();
+    	
     }
 
     public void enviarNotificacionConfirmacion() { // Hay que revisar esto bien, al momento de enviar los correos
@@ -171,8 +163,8 @@ public class Control {
     }
     	
 
-    public Boolean confirmarCita(Cliente cliente) {
-    	Cita cita = consultarCita(cliente);
+    public Boolean confirmarCita(int pos) {
+    	Cita cita = citas.get(pos);
         if (cita != null) {
             // Aprovechamos el método confirmar() 
             cita.confirmar();
@@ -304,15 +296,10 @@ public class Control {
     	if (cliente == null) {
             return true; // Si el cliente es nulo, técnicamente no tiene cita
         }
+    	if (cliente.getCitas().size() == 0)
+    		return true;
+    	return false;
         
-        for (Cita c : this.citas) {
-            // Comparamos si el cliente de la cita es el mismo que estamos consultando
-            if (c.getCliente() != null && c.getCliente().equals(cliente)) {
-                return false; // Se ecuentra uan cita para el cliente
-            }
-        }
-        
-        return true; // No tiene ninguna cita registrada
     }
     
     public Boolean verificarClienteListaEspera(Cliente cliente) {
