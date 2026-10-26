@@ -300,7 +300,7 @@ public class Control {
     }
 
     //  VALIDACIONES ---------------------------------------------------------------------------
-    public Boolean verificarClienteSinCita(Cliente cliente) {
+    private Boolean verificarClienteSinCita(Cliente cliente) {
     	if (cliente == null) {
             return true; // Si el cliente es nulo, técnicamente no tiene cita
         }
@@ -310,7 +310,7 @@ public class Control {
         
     }
     
-    public Boolean verificarClienteListaEspera(Cliente cliente) {
+    private Boolean verificarClienteListaEspera(Cliente cliente) {
     	if (cliente == null) {
             return false;
         }
@@ -324,7 +324,7 @@ public class Control {
         return false; // El cliente no está en la lista de espera
     }
 
-    public Boolean verificarHorarioDisponible(LocalDate fecha, int hora) {
+    private Boolean verificarHorarioDisponible(LocalDate fecha, int hora) {
     	//  Obtener el día de la semana de la fecha
         DayOfWeek diaConsulta = fecha.getDayOfWeek();
         
@@ -359,7 +359,7 @@ public class Control {
     }
     
 
-    public Boolean verificarServicio(Servicio servicio) {
+    private Boolean verificarServicio(Servicio servicio) {
     	//  Validar que el objeto servicio no sea nulo
         if (servicio == null || servicio.getTipoServicio() == null) {
             return false;
@@ -378,11 +378,11 @@ public class Control {
     }
    
 
-    public Boolean esEmailValido(String email) {
+    private Boolean esEmailValido(String email) {
         return email != null && email.contains("@");
     }
 
-    public Boolean esNumeroValido(String numero) {
+    private Boolean esNumeroValido(String numero) {
         return numero != null && numero.length() >= 8;
     }
 }
