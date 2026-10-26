@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class Control {
     
@@ -38,7 +40,7 @@ public class Control {
         return instancia;
     }
 
-    // GESTIÓN DE CLIENTES
+    // GESTIÓN DE CLIENTES-------------------------------------------------------------
     public void crearCliente(String nombre, String email, String numero) {
     	// Validar formato antes de crear
         if (!esEmailValido(email)) {
@@ -76,7 +78,7 @@ public class Control {
     	if (posicion >= 0 && posicion < this.clientes.size()) {
             Cliente clienteAEliminar = this.clientes.get(posicion);
             
-            // No se puede borrar si tiene citas o está en lista de espera
+            																										// No se puede borrar si tiene citas o está en lista de espera
             if (!verificarClienteSinCita(clienteAEliminar)) {
                 System.out.println("Error: No es posible eliminar al cliente porque tiene citas programadas.");
                 return;
@@ -99,7 +101,7 @@ public class Control {
         return null; // Si la posición no existe
     }
 
-    // --- GESTIÓN DE CITAS ---
+    // --- GESTIÓN DE CITAS ------------------------------------------------
     public void crearCita(LocalDate fecha, int hora, Servicio servicio, Cliente cliente) {
         // Verificar que el horario esté disponible
         if (!verificarHorarioDisponible(fecha, hora)) {
@@ -173,14 +175,20 @@ public class Control {
         return false;
     }
 
-    public List<Cita> verCalendarioCitas() {
-    	return this.citas;    
+    public Map<LocalDate, Cita> verCalendarioCitas() {
+    	Map<LocalDate, Cita> Calendario = new TreeMap<LocalDate, Cita>();
+    	for (Cita cita : citas) {
+    		LocalDate fechaTemp = cita.getFecha();
+    		Calendario.put(fechaTemp, cita);
+    	}
+    	return Calendario;
     }
 
-    // GESTIÓN DE SERVICIOS
+    // GESTIÓN DE SERVICIOS---------------------------------------------------------------
     public void crearServicio(String tipoServicio) {
     	if (tipoServicio == null || tipoServicio.trim().isEmpty()) {
             System.out.println("Error: El tipo de servicio no puede estar vacío.");
+            
             return;
         }
 
@@ -238,9 +246,9 @@ public class Control {
         return null;
     }
 
-    //  LISTA DE ESPERA Y HORARIOS ---
-    public void agregarClienteListaEspera(Cliente cliente) {
-        this.listaEspera.add(cliente);
+    //  LISTA DE ESPERA Y HORARIOS ----------------------------------------------------------
+    public void agregarClienteListaEspera(int pos) {
+        this.listaEspera.add(clientes.get(pos));
     }
 
     public void borrarClienteListaEspera(int posicion) {
@@ -291,7 +299,7 @@ public class Control {
         return this.horarios;
     }
 
-    //  VALIDACIONES 
+    //  VALIDACIONES ---------------------------------------------------------------------------
     public Boolean verificarClienteSinCita(Cliente cliente) {
     	if (cliente == null) {
             return true; // Si el cliente es nulo, técnicamente no tiene cita
