@@ -55,4 +55,8 @@ public class Cliente {
 	public void removeCita(int index) {
 		citas.remove(index);
 	}
+	
+	public String toString() {
+	    return nombre + " - " + email + " - " + numero;
+	}
 }

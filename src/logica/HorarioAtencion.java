@@ -29,7 +29,7 @@ public class HorarioAtencion {
 		this.horaCierre = horaCierre;
 	}
 	public Boolean esHoraValida(int hora) {
-		return hora >= horaApertura && hora <= horaCierre;
+		return hora >= horaApertura && hora < horaCierre; //le cambié a menor estricto para que no molesten a la hora de cierre ;)
 	}
 	public Boolean estaCerrado() {
 		// Los dias que esté cerrado se abre y se cierra a la misma hora, entonces devuelve true si se cumple esto.

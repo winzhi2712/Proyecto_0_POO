@@ -40,7 +40,16 @@ public class Cita {
 		this.servicio = servicio;
 	}
 	
+	//Mikel was here bitches
 	public boolean confirmar() {
-		return !confirmacion;
+	    if (confirmacion) {
+	        return false;      
+	    }
+	    confirmacion = true; 
+	    return true;
+	}
+
+	public boolean estaConfirmada() {
+	    return confirmacion;
 	}
 }
