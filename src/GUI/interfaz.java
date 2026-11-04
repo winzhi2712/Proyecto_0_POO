@@ -1,6 +1,7 @@
 package GUI;
 
 import javax.swing.SwingUtilities;
+import control.Control;
 
 public class interfaz {
 	public static void main(String[]args) {
@@ -10,6 +11,7 @@ public class interfaz {
 			public void run() {
 				MainFrame main;
 				try {
+					Control.cargar(); //Carga los datos guardados
 					main = new MainFrame();
 					main.show();
 				} catch (Exception e) {

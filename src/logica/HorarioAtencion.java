@@ -3,8 +3,10 @@ package logica;
 import java.time.DayOfWeek;
 import java.util.List;
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class HorarioAtencion {
+public class HorarioAtencion implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private DayOfWeek dia;
 	private int horaApertura;
 	private int horaCierre;

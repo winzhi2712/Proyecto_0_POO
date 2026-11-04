@@ -1,6 +1,9 @@
 package GUI;
 
 import java.awt.BorderLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import control.Control;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -23,9 +26,17 @@ public class MainFrame {
 	public MainFrame() throws Exception, IOException {
 		window = new JFrame();
 		window.setTitle("CALVESA");
-		window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); 
+		//aqui voy a hacer unos cambios paraque todos los datos se guarden antes de cerrar la interfaz
 		window.setSize(800, 500);
 		window.setLocationRelativeTo(null);
+		
+		window.addWindowListener(new WindowAdapter() { //Cuando el usuario presiona X llama a cerrarAplicacion() para guardar los datos.
+			@Override
+			public void windowClosing(WindowEvent e) {
+				cerrarAplicacion();
+			}
+		});
 		
 		JPanel panel = new JPanel(new BorderLayout());
 		ImageIcon image = new ImageIcon("pelo.jpeg");
@@ -113,7 +124,7 @@ public class MainFrame {
 		button5.addActionListener(new ActionListener() {
 					
 					public void actionPerformed(ActionEvent e) {
-						System.exit(0);
+						cerrarAplicacion();
 					}
 					
 				});
@@ -128,6 +139,11 @@ public class MainFrame {
 		JButton button = new JButton(nombre);
 		button.setFocusable(false);
 		return button;
+	}
+	
+	private void cerrarAplicacion() {
+		Control.guardar();
+		System.exit(0);
 	}
 	
 }

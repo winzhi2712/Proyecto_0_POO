@@ -1,6 +1,8 @@
 package GUI;
 
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.List;
@@ -32,7 +34,14 @@ public class JFrameCitas extends JFrame {
 
 	public void initialize() {
 		this.setTitle("SECCION DE CITAS");
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		this.addWindowListener(new WindowAdapter() { 
+			@Override
+			public void windowClosing(WindowEvent e) {
+				Control.guardar();
+				System.exit(0);
+			}
+		});
 		this.setSize(800, 500);
 		this.setLocationRelativeTo(null);
 

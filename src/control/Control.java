@@ -10,6 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.io.Serializable;
+import java.io.FileOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.IOException;
+
 
 /*
  * RESUMEN DE CAMBIOS PARA QUE NO SE ME PIERDAN JUGADORES
@@ -19,11 +27,11 @@ import java.util.TreeMap;
  *    para que la interfaz los muestre en una ventanita (getUltimoMensaje()).
  *  - Getters nuevos para que la GUI llene sus listas.
  *  - Validaciones del enunciado que faltaban.
- *  - Mikel es la pura oshtia si o qué?
+ *  - Mikel es la pura oshtia si o qué? - si atte. Jose
  */
-public class Control {
+public class Control implements Serializable {
     
-   
+	private static final long serialVersionUID = 1L;
     private static Control instancia;
 
     // Colecciones (Listas) 
@@ -51,6 +59,40 @@ public class Control {
             instancia = new Control();
         }
         return instancia;
+    }
+    
+    // Método para guardar la información actual del programa 
+    public static void guardar() {
+    	try{ Control control = Control.getInstancia();
+    		FileOutputStream archivo = new FileOutputStream("barberia.dat");
+    		ObjectOutputStream salida = new ObjectOutputStream(archivo);
+    		salida.writeObject(control);
+    		salida.close();
+    		archivo.close();
+    		System.out.println("Datos guardados.");
+    } catch (IOException e) {
+    	System.out.println("Error al guardar: "+ e.getMessage());
+    }
+    }
+    
+    public static void cargar() {
+    	File archivo = new File("barberia.dat");
+    	if (archivo.exists()) {
+    		try {
+    			FileInputStream entrada = new FileInputStream(archivo);
+    			ObjectInputStream objetoEntrada = new ObjectInputStream(entrada);
+    			Control control = (Control) objetoEntrada.readObject();
+    			instancia = control;
+    			objetoEntrada.close();
+    			entrada.close();
+    			System.out.println("Datos cargados.");
+    		} catch (IOException | ClassNotFoundException e) {
+    			System.out.println("Error al cargar los datos: "+ e.getMessage());
+    		}
+    	}else {
+			instancia = new Control(); //Si no hay un archivo crea una instancia nueva :)
+			System.out.println("No hay datos guardados. Iniciando nuevo sistema.");
+		}
     }
 
     // NUEVO: MENSAJES Y GETTERS PARA LA INTERFAZ

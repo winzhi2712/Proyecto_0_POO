@@ -1,9 +1,11 @@
 package logica;
 
 import java.util.LinkedList;
+import java.io.Serializable;
 import java.util.List;
 
-public class Cliente {
+public class Cliente implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private String nombre;
 	private String email;
 	private String numero;
