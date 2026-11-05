@@ -274,6 +274,7 @@ public class JFrameAdmin extends JFrame {
 			}
 		}
 		JOptionPane.showMessageDialog(this, "Proceso de envío terminado.");
+		cargarPendientes();
 	}
 
 	private void mostrarResultado(boolean ok) {

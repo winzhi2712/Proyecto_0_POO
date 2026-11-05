@@ -17,7 +17,9 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.IOException;
-
+import jakarta.mail.*;
+import jakarta.mail.internet.*;
+import java.util.Properties;
 
 /*
  * RESUMEN DE CAMBIOS PARA QUE NO SE ME PIERDAN JUGADORES
@@ -312,12 +314,60 @@ public class Control implements Serializable {
     	// CAMBIO: ahora recibe la cita a notificar y devuelve si se pudo enviar o no.
     	// PENDIENTE: aquí va el envío real del correo (JavaMail u otra biblioteca).
     	// Por ahora solo lo simula y siempre dice que funcionó.
-    	Cliente cliente = getClienteDeCita(cita);
-    	if (cliente == null) {
-    		return fallo("Error: La cita no tiene un cliente asociado.");
+    	    Cliente cliente = getClienteDeCita(cita);
+    	    if (cliente == null) {
+    	        return fallo("Error: La cita no tiene un cliente asociado.");
+    	    }
+
+    	    // Configuración de credenciales del remitente (tu correo de la barbería)
+    	    final String remitente = "barberiaavilespoo@gmail.com"; 
+    	    final String password = "xsyk frcs pxpm irck"; // Contraseña de aplicación de Google
+
+    	    // Propiedades de conexión SMTP para Gmail
+    	    Properties props = new Properties();
+    	    props.put("mail.smtp.auth", "true");
+    	    props.put("mail.smtp.starttls.enable", "true");
+    	    props.put("mail.smtp.host", "smtp.gmail.com");
+    	    props.put("mail.smtp.port", "587");
+    	    props.put("mail.smtp.ssl.protocols", "TLSv1.2");
+
+    	    // Crear sesión autenticada
+    	    Session session = Session.getInstance(props, new Authenticator() {
+    	        @Override
+    	        protected PasswordAuthentication getPasswordAuthentication() {
+    	            return new PasswordAuthentication(remitente, password);
+    	        }
+    	    });
+
+    	    try {
+    	        // Crear el mensaje
+    	        Message mensaje = new MimeMessage(session);
+    	        mensaje.setFrom(new InternetAddress(remitente));
+    	        mensaje.setRecipients(Message.RecipientType.TO, InternetAddress.parse(cliente.getEmail()));
+    	        mensaje.setSubject("Confirmación de Cita - Barbería CALVESA");
+    	        
+    	        // Contenido del mensaje con los datos del objeto Cita y Cliente
+    	        String cuerpo = "Hola " + cliente.getNombre() + ",\n\n"
+    	                      + "Te recordamos que tienes una cita programada para el día de mañana:\n"
+    	                      + " - Fecha: " + cita.getFecha() + "\n"
+    	                      + " - Hora: " + cita.getHora() + ":00 hrs\n"
+    	                      + " - Servicio: " + cita.getServicio().getTipoServicio() + "\n\n"
+    	                      + "Por favor comunícate con el local para confirmar tu asistencia.\n\n"
+    	                      + "¡Te esperamos en Barbería CALVESA!"
+    	                      + "Besitos😘";
+    	        
+    	        mensaje.setText(cuerpo);
+
+    	        // Enviar el correo a través de la red
+    	        Transport.send(mensaje);
+    	        
+    	        return exito("Correo de confirmación enviado exitosamente a " + cliente.getEmail());
+
+    	    } catch (MessagingException e) {
+    	        e.printStackTrace();
+    	        return fallo("Error al enviar el correo a " + cliente.getEmail() + ": " + e.getMessage());
+    	    }
     	}
-    	return exito("(Simulado) Correo enviado a " + cliente.getEmail());
-    }
 
     // NUEVO: citas de mañana, sin confirmar y dentro del horario de atención
     // (es la lista que pide el caso de uso "Enviar notificación de confirmación")
