@@ -353,8 +353,7 @@ public class Control implements Serializable {
     	                      + " - Hora: " + cita.getHora() + ":00 hrs\n"
     	                      + " - Servicio: " + cita.getServicio().getTipoServicio() + "\n\n"
     	                      + "Por favor comunícate con el local para confirmar tu asistencia.\n\n"
-    	                      + "¡Te esperamos en Barbería CALVESA!"
-    	                      + "Besitos😘";
+    	                      + "¡Te esperamos en Barbería CALVESSA!";
     	        
     	        mensaje.setText(cuerpo);
 
