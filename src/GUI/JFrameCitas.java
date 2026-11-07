@@ -34,6 +34,7 @@ public class JFrameCitas extends JFrame {
 
 	public void initialize() {
 		this.setTitle("SECCION DE CITAS");
+		this.getContentPane().setBackground(Color.cyan);
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		this.addWindowListener(new WindowAdapter() { 
 			@Override
@@ -46,6 +47,7 @@ public class JFrameCitas extends JFrame {
 		this.setLocationRelativeTo(null);
 
 		JPanel panel = new JPanel(new BorderLayout());
+		panel.setOpaque(false);
 		JLabel mesage = new JLabel("SECCION DE CITAS", JLabel.CENTER);
 
 		//Llenar las listas desplegables
@@ -66,6 +68,7 @@ public class JFrameCitas extends JFrame {
 
 		//DERECHA: formulario
 		JPanel formulario = new JPanel(new GridLayout(8, 1, 5, 5));
+		formulario.setOpaque(false);
 		formulario.setPreferredSize(new Dimension(260, 0));
 		formulario.add(new JLabel("Fecha (AAAA-MM-DD):"));
 		formulario.add(campoFecha);
@@ -78,12 +81,15 @@ public class JFrameCitas extends JFrame {
 
 		//ABAJO: botones
 		JPanel panelButton = new JPanel(new FlowLayout());
+		panelButton.setOpaque(false);
 		JButton botonCrear = createButton("CREAR");
 		JButton botonModificar = createButton("MODIFICAR");
+		Color rojoSalir = new Color(255, 46, 46);
 		JButton botonBorrar = createButton("BORRAR");
 		JButton botonConfirmar = createButton("CONFIRMAR");
 		JButton botonCalendario = createButton("CALENDARIO");
 		JButton button1 = createButton("REGRESAR");
+		button1.setBackground(rojoSalir);
 		JButton[] botones = { botonCrear, botonModificar, botonBorrar, botonConfirmar, botonCalendario, button1 };
 		for (JButton b : botones) {
 			b.setPreferredSize(new Dimension(115, 40));

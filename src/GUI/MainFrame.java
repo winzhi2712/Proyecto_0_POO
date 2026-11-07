@@ -1,6 +1,7 @@
 package GUI;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import control.Control;
@@ -26,6 +27,7 @@ public class MainFrame {
 	public MainFrame() throws Exception, IOException {
 		window = new JFrame();
 		window.setTitle("CALVESA");
+		window.getContentPane().setBackground(Color.cyan);
 		window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); 
 		//aqui voy a hacer unos cambios paraque todos los datos se guarden antes de cerrar la interfaz
 		window.setSize(800, 500);
@@ -39,6 +41,7 @@ public class MainFrame {
 		});
 		
 		JPanel panel = new JPanel(new BorderLayout());
+		panel.setOpaque(false);
 		ImageIcon image = new ImageIcon("pelo.jpeg");
 		Image imageScale = image.getImage().getScaledInstance(300, 200, Image.SCALE_SMOOTH);
 		JLabel etiquetaImage = new JLabel(new ImageIcon(imageScale));
@@ -55,6 +58,7 @@ public class MainFrame {
 		
 		//botones
 		JPanel panelButton = new JPanel(new FlowLayout());
+		panelButton.setOpaque(false);
 		JButton button1 = createButton("CLIENTES");
 		button1.setPreferredSize(new Dimension(120, 40));
 		panelButton.add(button1);
@@ -72,7 +76,9 @@ public class MainFrame {
 		button4.setPreferredSize(new Dimension(160, 40));
 		panelButton.add(button4);
 		
+		Color rojoSalir = new Color(255, 46, 46);
 		JButton button5 = createButton("SALIR");
+		button5.setBackground(rojoSalir);
 		button5.setPreferredSize(new Dimension(120, 40));
 		panelButton.add(button5);
 		

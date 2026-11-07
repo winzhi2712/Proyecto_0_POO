@@ -27,6 +27,7 @@ public class JFrameEspera extends JFrame {
 
 	public void initialize() {
 		this.setTitle("SECCION DE LA LISTA DE ESPERA");
+		this.getContentPane().setBackground(Color.cyan);
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		this.addWindowListener(new WindowAdapter() { 
 			@Override
@@ -39,6 +40,7 @@ public class JFrameEspera extends JFrame {
 		this.setLocationRelativeTo(null);
 
 		JPanel panel = new JPanel(new BorderLayout());
+		panel.setOpaque(false);
 		JLabel mesage = new JLabel("SECCION DE LA LISTA DE ESPERA", JLabel.CENTER);
 
 		// Llenar el desplegable con todos los clientes
@@ -47,12 +49,14 @@ public class JFrameEspera extends JFrame {
 		}
 
 		lista.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-
+		Color rojoSalir = new Color(255, 46, 46);
 		// Abajo: desplegable + botones, todos en una fila
 		JPanel panelButton = new JPanel(new FlowLayout());
+		panelButton.setOpaque(false);
 		JButton botonAgregar = createButton("AGREGAR");
 		JButton botonBorrar = createButton("BORRAR");
 		JButton button1 = createButton("REGRESAR");
+		button1.setBackground(rojoSalir);
 		botonAgregar.setPreferredSize(new Dimension(60, 40));
 		botonBorrar.setPreferredSize(new Dimension(60, 40));
 		button1.setPreferredSize(new Dimension(60, 40));

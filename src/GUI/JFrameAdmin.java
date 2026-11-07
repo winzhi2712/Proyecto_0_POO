@@ -39,6 +39,7 @@ public class JFrameAdmin extends JFrame {
 
 	public void initialize() {
 		this.setTitle("SECCION DE LA ADMINISTRACION");
+		this.getContentPane().setBackground(Color.cyan);
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		this.addWindowListener(new WindowAdapter() { 
 			@Override
@@ -51,6 +52,7 @@ public class JFrameAdmin extends JFrame {
 		this.setLocationRelativeTo(null);
 
 		JPanel panel = new JPanel(new BorderLayout());
+		panel.setOpaque(false);
 		JLabel mesage = new JLabel("SECCION DE LA ADMINISTRACION", JLabel.CENTER);
 
 		// Armar las pestañas
@@ -58,8 +60,10 @@ public class JFrameAdmin extends JFrame {
 		pestanas.addTab("Tipos de servicio", crearPanelServicios());
 		pestanas.addTab("Horario de atención", crearPanelHorario());
 		pestanas.addTab("Notificaciones", crearPanelNotificaciones());
-
+		
+		Color rojoSalir = new Color(255, 46, 46);
 		JButton button1 = createButton("REGRESAR");
+		button1.setBackground(rojoSalir);
 		button1.setPreferredSize(new Dimension(120, 40));
 		JPanel panelButton = new JPanel(new FlowLayout());
 		panelButton.add(button1);
@@ -86,9 +90,11 @@ public class JFrameAdmin extends JFrame {
 	//-------------------------------------------------------------------
 	private JPanel crearPanelServicios() {
 		JPanel p = new JPanel(new BorderLayout());
+		p.setOpaque(false);
 		listaServicios.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		JPanel abajo = new JPanel(new FlowLayout());
+		abajo.setOpaque(false);
 		JButton botonCrear = createButton("CREAR");
 		JButton botonModificar = createButton("MODIFICAR");
 		JButton botonBorrar = createButton("BORRAR");
@@ -149,12 +155,14 @@ public class JFrameAdmin extends JFrame {
 	// --------------------------------------------------------------------
 	private JPanel crearPanelHorario() {
 		JPanel p = new JPanel(new BorderLayout());
+		p.setOpaque(false);
 
 		p.add(new JLabel("Escriba horas enteras (0 a 24). Si apertura y cierre son iguales, ese día está CERRADO.",
 				JLabel.CENTER), BorderLayout.NORTH);
 
 		// Tabla de 8 filas x 3 columnas: encabezado + 7 días
 		JPanel tabla = new JPanel(new GridLayout(8, 3, 10, 10));
+		tabla.setOpaque(false);
 		tabla.add(new JLabel("Día"));
 		tabla.add(new JLabel("Hora de apertura"));
 		tabla.add(new JLabel("Hora de cierre"));
@@ -176,6 +184,7 @@ public class JFrameAdmin extends JFrame {
 		JButton botonGuardar = createButton("GUARDAR HORARIO");
 		botonGuardar.setPreferredSize(new Dimension(180, 40));
 		JPanel abajo = new JPanel(new FlowLayout());
+		abajo.setOpaque(false);
 		abajo.add(botonGuardar);
 
 		botonGuardar.addActionListener(e -> guardarHorario());
@@ -210,9 +219,11 @@ public class JFrameAdmin extends JFrame {
 
 	private JPanel crearPanelNotificaciones() {
 		JPanel p = new JPanel(new BorderLayout());
+		p.setOpaque(false);
 		areaPendientes.setEditable(false);
 
 		JPanel abajo = new JPanel(new FlowLayout());
+		abajo.setOpaque(false);
 		JButton botonActualizar = createButton("ACTUALIZAR LISTA");
 		JButton botonEnviar = createButton("ENVIAR CORREOS");
 		botonActualizar.setPreferredSize(new Dimension(160, 40));
