@@ -53,9 +53,9 @@ public class JFrameEspera extends JFrame {
 		JButton botonAgregar = createButton("AGREGAR");
 		JButton botonBorrar = createButton("BORRAR");
 		JButton button1 = createButton("REGRESAR");
-		botonAgregar.setPreferredSize(new Dimension(120, 40));
-		botonBorrar.setPreferredSize(new Dimension(120, 40));
-		button1.setPreferredSize(new Dimension(120, 40));
+		botonAgregar.setPreferredSize(new Dimension(60, 40));
+		botonBorrar.setPreferredSize(new Dimension(60, 40));
+		button1.setPreferredSize(new Dimension(60, 40));
 		panelButton.add(new JLabel("Cliente:"));
 		panelButton.add(comboCliente);
 		panelButton.add(botonAgregar);
